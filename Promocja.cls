@@ -1,0 +1,35 @@
+Class zad01.Promocja Extends (%SerialObject, %Populate, %XML.Adaptor, %ZEN.DataModel.Adaptor)
+{
+
+Property nazwa As %String [ Required ];
+
+Property procentZnizki As %Integer [ Required ];
+
+Method %OnNew(nazwa As %String, procentZnizki As %Integer) As %Status [ Private, ServerOnly = 1 ]
+{
+    set ..nazwa = nazwa
+    set ..procentZnizki = procentZnizki
+    Quit $$$OK
+}
+
+Method pokaz()
+{
+	write !,"Nazwa znizki: ", ..nazwa, " Procent znizki: ", ..procentZnizki
+}
+
+Storage Default
+{
+<Data name="PromocjaState">
+<Value name="1">
+<Value>nazwa</Value>
+</Value>
+<Value name="2">
+<Value>procentZnizki</Value>
+</Value>
+</Data>
+<State>PromocjaState</State>
+<StreamLocation>^zad01.PromocjaS</StreamLocation>
+<Type>%Library.CacheSerialState</Type>
+}
+
+}
