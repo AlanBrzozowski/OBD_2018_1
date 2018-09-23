@@ -27,4 +27,9 @@ Method %OnNew(imie As %String, nazwisko As %String, ulica, numerDomu As %Integer
     Quit $$$OK
 }
 
+Method wynagrodzenie() As %Float
+{
+	return 21 * ..stawkaGodzinowa
+}
+
 }
