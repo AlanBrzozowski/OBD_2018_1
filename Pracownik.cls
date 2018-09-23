@@ -32,4 +32,9 @@ Method wynagrodzenie() As %Float
 	return 21 * ..stawkaGodzinowa
 }
 
+Method wynagrodzeniePracownika(pracownik As Pracownik) As %Float
+{
+    return pracownik.wynagrodzenie()
+}
+
 }

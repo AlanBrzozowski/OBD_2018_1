@@ -1,4 +1,4 @@
-Class zad01.Mechanik Extends (%Persistent, %SerialObject, %Populate, %XML.Adaptor, %ZEN.DataModel.Adaptor, zad01.Pracownik)
+Class zad01.Mechanik Extends (%Persistent, %Populate, %XML.Adaptor, %ZEN.DataModel.Adaptor, zad01.Pracownik)
 {
 
 Property miesiecznaSumaNapiwkow As %Float [ Required ];
@@ -7,7 +7,7 @@ Relationship Stanowiska As zad01.Stanowisko [ Cardinality = many, Inverse = Mech
 
 Method wynagrodzenie() As %Float
 {
-	return 21 * ..stawkaGodzinowa + ..miesiecznaSumaNapiwkow
+	return 21 * ..stawkaGodzinowa + ..bonus
 }
 
 ClassMethod rezerwacjeStanowisk(mechanik As Mechanik)
